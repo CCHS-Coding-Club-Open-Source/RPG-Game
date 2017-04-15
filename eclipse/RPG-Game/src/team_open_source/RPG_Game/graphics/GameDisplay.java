@@ -50,8 +50,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		timer = new Timer(QUICKNESS, new ActionListener(){   
 			public void actionPerformed(ActionEvent e) {
 				//If the window is selected/focused, update()
-				if(isFocusOwner()) update(); //Works most of the time
-				else if(Main.displayFrame.isFocusOwner()) update(); //Works on some computers (in case the above doesn't work)
+				if(isFocusOwner()) updt(); //Works most of the time
+				else if(Main.displayFrame.isFocusOwner()) updt(); //Works on some computers (in case the above doesn't work)
 		}});
 
 	}
@@ -71,7 +71,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			e.printStackTrace();
 		}
 		
-		backgroundImage = new ImageIcon(myPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT))
+		backgroundImage = new ImageIcon(myPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT));
 
 		background = new JLabel(backgroundImage);
 		bgrndSz = background.getPreferredSize();
@@ -82,7 +82,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 
 		this.room = board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
-		update();
+		updt();
 		timer.start();
 		
 	}
@@ -109,7 +109,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 
 	
-	public void update() {
+	public void updt() {
 		
 		//updateLogic();
 		
@@ -120,7 +120,10 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		background = new JLabel(backgroundImage);
+		remove(background);
+		
+		//background = new JLabel(backgroundImage);
+		//add(background);
 
 		
 		System.out.println(room);
@@ -148,6 +151,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			
 		}
 		
+		revalidate();
 		repaint();
 		
 		
