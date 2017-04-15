@@ -5,7 +5,6 @@ public class Dragon extends Enemy {
 		super(xPos, yPos);
 		for(int i = 0; i < 5; i++){
 		super.addToStat(i);
-		super.addToStat(i);
 		}
 	}
 	public String getImageName(){ return "dragon.png"; }

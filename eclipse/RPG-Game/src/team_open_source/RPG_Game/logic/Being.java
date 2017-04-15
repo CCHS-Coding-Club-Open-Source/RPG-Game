@@ -7,6 +7,7 @@ public abstract class Being extends Thing {
 	int intel;
 	int wis;
 	int cha;
+	int health;
 	
 
 	public Being(int xPos, int yPos){
@@ -39,6 +40,8 @@ public abstract class Being extends Thing {
 	public void next(){
 		
 	}
+	
+	public
 	
 	public void addToStat(int stat){
 	switch(stat){

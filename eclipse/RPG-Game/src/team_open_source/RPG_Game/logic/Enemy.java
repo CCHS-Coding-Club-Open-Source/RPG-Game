@@ -18,8 +18,25 @@ public class Enemy extends Being {
 	}
 	
 	public void next(){
-	xPos++;
-	yPos++;
+	if(xPos >  5){
+		xPos = 5;
+	}
+	if(xPos < 0){
+		xPos = 0; 
+	}
+	if(yPos > 5){
+		yPos = 5;
+	}
+	if(yPos < 0){
+		yPos = 0;
+	}
+	int xPosAdditive = (int) (Math.random() * 1) -1;
+	int yPosAdditive = (int) (Math.random() * 1) -1;
+	
+	xPos += xPosAdditive;
+	yPos += yPosAdditive;
+	
+	
 	}
 	
 	public String getImageName(){ return "Enemy?"; }
