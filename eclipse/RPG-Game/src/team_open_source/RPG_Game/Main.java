@@ -52,31 +52,25 @@ public class Main {
         displayFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         
-        
         optionPanel = new OptionPanel();
         displayFrame.getContentPane().add(optionPanel, BorderLayout.NORTH);
         
 
-        
         displayPanel = new GameDisplay(optionPanel, sqDim);
         displayPanel.startGame();
         displayFrame.getContentPane().add(displayPanel, BorderLayout.SOUTH);  //add the panel with the keylistener to the frame
-        
-
         
         
         displayFrame.pack();
         displayFrame.setLocation(dim.width/2-displayFrame.getSize().width/2, dim.height/2-displayFrame.getSize().height/2);
         displayFrame.setVisible(true);         //let's see it
         
-        
-        
-        
 
 	}
 
 	protected static void exitGame() {
-		// TODO Auto-generated method stub
+		// TODO make sure to check and be sure this exits gracefully
+		System.exit(0);
 		
 	}
 
