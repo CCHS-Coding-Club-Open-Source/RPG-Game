@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
 import team_open_source.RPG_Game.graphics.GameDisplay;
+import team_open_source.RPG_Game.graphics.OptionPanel;
 import team_open_source.RPG_Game.logic.Player;
 
 /**
