@@ -28,5 +28,7 @@ ArrayList<Thing> tiles;
 	public ArrayList<Thing> getAll(){
 		return tiles;
 	}
+	
+
 
 }
