@@ -1,11 +1,9 @@
-package team_open_source.RPG_Game;
+package team_open_source.RPG_Game.logic;
 
-public class Player extends Being {
-
-	public Player(){
+public class Enemy extends Being {
+	public Enemy(){
 		super();
-}
-	
+	}
 	public int attack(){
 		return ((int)( Math.random() * 3) + 1) + super.str;
 	}
@@ -15,7 +13,8 @@ public class Player extends Being {
 	}
 	
 	public void move(int xDir, int yDir){
-		super.xPos += xDir;
-		super.yPos += yDir;
-		}
+	super.xPos += xDir;
+	super.yPos += yDir;
+	}
+	
 }

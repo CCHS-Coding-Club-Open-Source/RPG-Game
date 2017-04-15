@@ -3,7 +3,16 @@
  */
 package team_open_source.RPG_Game;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JFrame;
+
+import team_open_source.RPG_Game.graphics.GameDisplay;
+import team_open_source.RPG_Game.logic.Player;
 
 /**
  * The main/runner class that is run by java to start the game
@@ -12,16 +21,65 @@ import javax.swing.JFrame;
  *
  */
 public class Main {
-	public static JFrame displayFrame;            //the frame will hold the JPanel 
+	public static Player thePlayer;
+    public static JFrame displayFrame;            //the frame will hold the JPanel 
     public static GameDisplay displayPanel;     //the panel will hold the text or graphics
+    public static Dimension dim;
+    public static int dim1;
+    public static int dim2;
+    public static int sqDim;
+    public static OptionPanel optionPanel;
     
 	/**
 	 * @param args The arguments given when running the program.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello world!");
+		
+		// Get dimensions for the window
+		dim = Toolkit.getDefaultToolkit().getScreenSize();
+        dim1 = (int) dim.getWidth();
+        dim2 = (int) dim.getHeight();
+        if(dim1 > dim2) sqDim = (int) (dim2/1.5);
+        else sqDim = (int) (dim1/1.5);
+        
 
+        displayFrame = new JFrame("RPG Game");
+        displayFrame.setResizable(false);
+        
+        displayFrame.setLayout(new BorderLayout());
+        
+        
+        // When they close the window, call "exitGame()" to exit gracefully
+        displayFrame.addWindowListener(new WindowAdapter() { @Override public void windowClosing(WindowEvent we){exitGame();} });
+        displayFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+        
+        
+        optionPanel = new OptionPanel();
+        displayFrame.getContentPane().add(optionPanel, BorderLayout.NORTH);
+        
+
+        
+        displayPanel = new GameDisplay(optionPanel, sqDim);
+        displayPanel.startGame();
+        displayFrame.getContentPane().add(displayPanel, BorderLayout.SOUTH);  //add the panel with the keylistener to the frame
+        
+
+        
+        
+        displayFrame.pack();
+        displayFrame.setLocation(dim.width/2-displayFrame.getSize().width/2, dim.height/2-displayFrame.getSize().height/2);
+        displayFrame.setVisible(true);         //let's see it
+        
+        
+        
+        
+
+	}
+
+	protected static void exitGame() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

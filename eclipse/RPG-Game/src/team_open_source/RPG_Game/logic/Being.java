@@ -1,4 +1,4 @@
-package team_open_source.RPG_Game;
+package team_open_source.RPG_Game.logic;
 
 public abstract class Being extends Thing {
 	int str;
