@@ -7,8 +7,8 @@ public class RoomGenerator {
 		ArrayList<Thing> returns = new ArrayList<Thing>();
 		switch(floorNum){
 		case 1: {
-			Goblin Gobbo = new Goblin(3,3);
-			returns.add(Gobbo);
+			Goblin gobbo = new Goblin(3,3);
+			returns.add(gobbo);
 			return returns;
 		}
 		case 2: 
