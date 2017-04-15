@@ -41,7 +41,6 @@ public abstract class Being extends Thing {
 		
 	}
 	
-	
 	public void addToStat(int stat){
 	switch(stat){
 	case 1:
