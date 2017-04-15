@@ -37,8 +37,10 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	JLabel background;
 	Dimension bgrndSz;
 	ImageIcon backgroundImage;
+	int roomNumber;
 	
 	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
+		roomNumber = 1;
 		this.sqDim = sqDim;
 		this.board = board;
 
@@ -73,7 +75,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		backgroundImage = new ImageIcon(backgroundPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT));
 
 		
-		this.room = board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
+		this.room = board.get(roomNumber);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
 		updt();
 		timer.start();
@@ -83,6 +85,12 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		System.out.println(e);
+		if( roomNumber < 10 ){
+			roomNumber++;
+		}else{
+			roomNumber = 1;
+		}
+		startGame();
 		// TODO Auto-generated method stub
 		
 	}

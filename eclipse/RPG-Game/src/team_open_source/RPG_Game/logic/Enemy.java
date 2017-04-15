@@ -87,8 +87,6 @@ public class Enemy extends Being {
 		yPos = 0;
 	}
 	
-	System.out.println(xPos);
-	System.out.println(yPos);
 	}
 	
 	public String getImageName(){ return "Enemy?"; }
