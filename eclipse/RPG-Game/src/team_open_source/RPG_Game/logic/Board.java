@@ -11,4 +11,8 @@ public class Board {
 			board.add(r);
 		}
 	}
+	
+	public Room get(int index){
+		return board.get(index);
+	}
 }
