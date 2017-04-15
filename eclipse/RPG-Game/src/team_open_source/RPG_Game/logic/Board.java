@@ -3,7 +3,7 @@ package team_open_source.RPG_Game.logic;
 import java.util.ArrayList;
 
 public class Board {
-	ArrayList<Room> board;
+	ArrayList<Room> board = new ArrayList<Room>();
 	public Board(){
 		RoomGenerator g = new RoomGenerator();
 		for(int i = 0; i < 11; i++){
