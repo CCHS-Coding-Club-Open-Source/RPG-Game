@@ -30,11 +30,60 @@ public class Enemy extends Being {
 	if(yPos < 0){
 		yPos = 0;
 	}
-	int xPosAdditive = (int) (Math.random() * 1) -1;
-	int yPosAdditive = (int) (Math.random() * 1) -1;
 	
-	xPos += xPosAdditive;
-	yPos += yPosAdditive;
+	int numSelector = (int) (Math.random() * 8 )+ 1;
+	switch(numSelector){
+	
+	case 1:
+	{
+		xPos--;
+		yPos--;
+		break;
+	}
+	case 2: 
+	{
+		yPos--;
+		break;
+	}
+	case 3: 
+	{
+		xPos ++;
+		yPos--;
+		break;
+	}
+	
+	case 4: 
+	{
+		xPos --;
+		break;
+	}
+	
+	case 5:
+	{
+		xPos ++;
+		break;
+	}
+	
+	case 6: 
+	{
+		xPos--;
+		yPos++;
+		break;
+	}
+	case 7:
+	{
+		yPos++;
+		break;
+	}
+	
+	case 8:
+	{
+		yPos++;
+		xPos++;
+	}
+		
+	
+	}
 	
 	
 	}

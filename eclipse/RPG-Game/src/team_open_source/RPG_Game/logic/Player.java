@@ -21,5 +21,8 @@ int gold;
 		super.yPos += yDir;
 		}
 	
+	
+	
+	
 	public String getImageName(){ return "Player?"; }
 }
