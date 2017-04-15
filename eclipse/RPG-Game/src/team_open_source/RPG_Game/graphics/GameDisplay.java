@@ -138,7 +138,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			int y = thing.getyPos()*10;
 			
 			int xCoord = 0;
-			int yCoord = 0;
+			int yCoord = 0; 
 			
 			try {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
