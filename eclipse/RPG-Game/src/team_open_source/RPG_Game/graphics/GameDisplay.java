@@ -33,6 +33,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	Timer timer;
 	int QUICKNESS;  //controls speed of movement; smaller number = faster
 	Board board;
+	Room room;
 	int sqDim;
 
 	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
@@ -78,6 +79,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		
 
 		timer.start();
+
+		room = this.board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
 	}
 
@@ -110,19 +113,22 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		updateGraphics();
 		
 		
-		
 		System.out.println("tick");
 	}
 	
 	public void updateGraphics() {
-		Room room = this.board.get(1);
+		room.next();
+		
 		ArrayList<Thing> itemsInRoom = room.getAll();
 		
 		for(int i = 0; i < itemsInRoom.size(); i++) {
 			Thing thing = itemsInRoom.get(i);
-			
+
 			int x = thing.getxPos()*100;
 			int y = thing.getyPos()*100;
+			
+			int xCoord = 0;
+			int yCoord = 0;
 			
 			try {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
@@ -130,7 +136,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 				imageLabel.setBounds(x, y, imageLabel.getPreferredSize().width, imageLabel.getPreferredSize().height);
 				add(imageLabel);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
