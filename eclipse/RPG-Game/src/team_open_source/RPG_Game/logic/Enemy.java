@@ -18,19 +18,7 @@ public class Enemy extends Being {
 	}
 	
 	public void next(){
-	if(xPos >  5){
-		xPos = 0;
-	}
-	if(xPos < 0){
-		xPos = 5; 
-	}
-	if(yPos > 5){
-		yPos = 0;
-	}
-	if(yPos < 0){
-		yPos = 5;
-	}
-	
+
 	int numSelector = (int) (Math.random() * 8 )+ 1;
 	switch(numSelector){
 	
@@ -86,7 +74,21 @@ public class Enemy extends Being {
 	
 	}
 	
+	if(xPos >= 5){
+		xPos = 4;
+	}
+	if(xPos < 0){
+		xPos = 0; 
+	}
+	if(yPos >= 5){
+		yPos = 4;
+	}
+	if(yPos < 0){
+		yPos = 0;
+	}
 	
+	System.out.println(xPos);
+	System.out.println(yPos);
 	}
 	
 	public String getImageName(){ return "Enemy?"; }

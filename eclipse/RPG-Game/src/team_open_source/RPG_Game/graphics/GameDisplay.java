@@ -42,7 +42,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		this.sqDim = sqDim;
 		this.board = board;
 
-		QUICKNESS = 100;
+		QUICKNESS = 1000;
 		
 		addKeyListener(this); //the panel will listen to the keyboard for key events
 
@@ -109,7 +109,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		updateGraphics();
 		
 		
-		System.out.println("tick");
 	}
 	
 	public void updateGraphics() {
@@ -123,7 +122,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		background.setBounds(0, 0, bgrndSz.width, bgrndSz.height);
 		add(background);
 
-		System.out.println(room);
 		this.room.move();
 		
 		ArrayList<Thing> itemsInRoom = room.getAll();
@@ -138,7 +136,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			int yCoord = y*(sqDim/5);
 			
 			try {
-				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
 				Image img = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()));
 				ImageIcon imgIcon = new ImageIcon(img.getScaledInstance(sqDim/5, sqDim/5, Image.SCALE_DEFAULT));
 				JLabel imageLabel = new JLabel(imgIcon);
