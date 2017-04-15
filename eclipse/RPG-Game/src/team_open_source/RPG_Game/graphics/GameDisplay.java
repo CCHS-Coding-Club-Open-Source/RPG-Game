@@ -34,6 +34,9 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	Board board;
 	int sqDim;
 	Room room;
+	JLabel background;
+	Dimension bgrndSz;
+	ImageIcon backgroundImage;
 
 	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
 		this.sqDim = sqDim;
@@ -68,12 +71,14 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			e.printStackTrace();
 		}
 		
+		backgroundImage = new ImageIcon(myPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT))
 
-		JLabel picLabel = new JLabel(new ImageIcon(myPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT)));
-		Dimension size = picLabel.getPreferredSize();
+		background = new JLabel(backgroundImage);
+		bgrndSz = background.getPreferredSize();
 		
-		picLabel.setBounds(0, 0, size.width, size.height);
-		add(picLabel);
+		
+		background.setBounds(0, 0, bgrndSz.width, bgrndSz.height);
+		add(background);
 
 		this.room = board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
@@ -115,8 +120,11 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		System.out.println(this.room);
-		//this.room.move();
+		background = new JLabel(backgroundImage);
+
+		
+		System.out.println(room);
+		this.room.move();
 		
 		ArrayList<Thing> itemsInRoom = room.getAll();
 		
@@ -133,7 +141,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
 				JLabel imageLabel = new JLabel(new ImageIcon(ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()))));
 				imageLabel.setBounds(x, y, imageLabel.getPreferredSize().width, imageLabel.getPreferredSize().height);
-				add(imageLabel);
+				background.add(imageLabel);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
