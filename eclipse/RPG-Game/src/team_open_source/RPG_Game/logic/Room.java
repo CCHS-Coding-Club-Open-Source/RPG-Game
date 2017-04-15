@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Room {
 ArrayList<Thing> tiles;
 
-	public Room(){
-	
+	public Room(ArrayList<Thing> tiles){
+	this.tiles = tiles;
 	}
 	
 	public void add(Thing addThing){
@@ -23,6 +23,10 @@ ArrayList<Thing> tiles;
 		for(Thing thing: tiles){
 			thing.next();
 		}
+	}
+	
+	public ArrayList<Thing> getAll(){
+		return tiles;
 	}
 
 }

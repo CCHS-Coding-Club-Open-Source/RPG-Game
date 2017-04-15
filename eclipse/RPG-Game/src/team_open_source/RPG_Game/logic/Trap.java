@@ -1,5 +1,12 @@
 package team_open_source.RPG_Game.logic;
 
-public class Trap {
+public abstract class Trap extends Thing {
+boolean triggered; 
+int dmg; 
+public Trap(int xPos,int yPos){
+	super(xPos, yPos);
+	triggered = false;
+}
+
 
 }

@@ -1,9 +1,10 @@
 package team_open_source.RPG_Game.logic;
-
+import java.util.ArrayList;
 public class Player extends Being {
-
-	public Player(){
-		super();
+int gold; 
+// TODO items + class
+	public Player(int xPos, int yPos){
+		super(xPos, yPos);
 }
 	
 	public int attack(){

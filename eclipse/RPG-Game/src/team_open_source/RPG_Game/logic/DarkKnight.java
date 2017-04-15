@@ -1,5 +1,11 @@
 package team_open_source.RPG_Game.logic;
 
-public class DarkKnight {
-
+public class DarkKnight extends Enemy {
+	public DarkKnight (int xPos, int yPos){
+		super(xPos, yPos);
+		for(int i = 0; i < 5; i++){
+		super.addToStat(i);
+		}
+	}
 }
+
