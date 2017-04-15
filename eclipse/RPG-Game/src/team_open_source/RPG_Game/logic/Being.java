@@ -41,6 +41,10 @@ public abstract class Being extends Thing {
 		
 	}
 	
+	public void subHealth(int damage){
+		health -= damage;
+	}
+	
 	public void addToStat(int stat){
 	switch(stat){
 	case 1:
