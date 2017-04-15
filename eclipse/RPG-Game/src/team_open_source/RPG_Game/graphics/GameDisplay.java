@@ -34,15 +34,11 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		QUICKNESS = 10;
 		
 		timer = new Timer(QUICKNESS, new ActionListener(){   
-			public void actionPerformed(ActionEvent e)
-			{
+			public void actionPerformed(ActionEvent e) {
 				//If the window is selected/focused, update()
 				if(isFocusOwner()) update(); //Works most of the time
 				else if(Main.displayFrame.isFocusOwner()) update(); //Works on some computers (in case the above doesn't work)
-
-			}
-		}
-				);
+		}});
 
 		update();
 	}
@@ -50,7 +46,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	public void startGame() {
 		BufferedImage myPicture = null;
 		try {
-			myPicture = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/room.png"));
+			myPicture = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/backgrounds/room.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
