@@ -20,7 +20,6 @@ ArrayList<Thing> tiles;
 	}
 	
 	public void move(){
-		System.out.println("AY");
 		for(Thing thing: tiles){
 			thing.next();
 		}

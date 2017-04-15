@@ -120,7 +120,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		remove(background);
+		//remove(background);
 		
 		//background = new JLabel(backgroundImage);
 		//add(background);
@@ -151,7 +151,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			
 		}
 		
-		revalidate();
+		//revalidate();
 		repaint();
 		
 		
