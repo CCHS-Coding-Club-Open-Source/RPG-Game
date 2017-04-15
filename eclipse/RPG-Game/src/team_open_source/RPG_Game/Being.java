@@ -19,7 +19,12 @@ public abstract class Being {
 	}
 	
 	public int attack(){
-		
-		return; 
+		return str +(int) (Math.random() * 3) + 1;
 	}
+	
+	public int dodge(){
+		return dex + (int) (Math.random() * 3) + 1;
+	}
+	
+	
 }
