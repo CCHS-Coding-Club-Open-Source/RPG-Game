@@ -120,12 +120,13 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		//remove(background);
+		background = new JLabel(backgroundImage);
+		bgrndSz = background.getPreferredSize();
 		
-		//background = new JLabel(backgroundImage);
-		//add(background);
+		background.setBounds(0, 0, bgrndSz.width, bgrndSz.height);
+		add(background);
+		
 
-		
 		System.out.println(room);
 		this.room.move();
 		
@@ -138,7 +139,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			int y = thing.getyPos()*10;
 			
 			int xCoord = 0;
-			int yCoord = 0; 
+			int yCoord = 0;
 			
 			try {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
@@ -151,7 +152,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			
 		}
 		
-		//revalidate();
 		repaint();
 		
 		
