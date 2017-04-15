@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -15,6 +16,8 @@ import javax.swing.Timer;
 
 import team_open_source.RPG_Game.Main;
 import team_open_source.RPG_Game.logic.Board;
+import team_open_source.RPG_Game.logic.Room;
+import team_open_source.RPG_Game.logic.Thing;
 
 /**
  * GameDisplay is responsible for the game's graphics, and triggering the game's logic from controls.
@@ -102,7 +105,23 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		this.board.get(0);
+		Room room = this.board.get(1);
+		ArrayList<Thing> itemsInRoom = room.getAll();
+		
+		for(int i = 0; i < itemsInRoom.size(); i++) {
+			Thing thing = itemsInRoom.get(i);
+			
+			try {
+				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
+				add(new JLabel(new ImageIcon(ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName())))));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
 	}
 	
 	
