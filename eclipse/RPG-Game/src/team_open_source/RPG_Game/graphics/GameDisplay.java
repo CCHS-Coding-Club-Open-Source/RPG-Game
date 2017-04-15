@@ -121,9 +121,13 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		for(int i = 0; i < itemsInRoom.size(); i++) {
 			Thing thing = itemsInRoom.get(i);
 			
+			
+			
 			try {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
-				add(new JLabel(new ImageIcon(ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName())))));
+				JLabel imageLabel = new JLabel(new ImageIcon(ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()))));
+				imageLabel.setBounds(0, 0, imageLabel.getPreferredSize().width, imageLabel.getPreferredSize().height);
+				add(imageLabel);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
