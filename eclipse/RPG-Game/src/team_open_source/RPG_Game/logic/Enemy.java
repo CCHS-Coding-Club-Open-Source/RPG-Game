@@ -80,6 +80,7 @@ public class Enemy extends Being {
 	{
 		yPos++;
 		xPos++;
+		break;
 	}
 		
 	
