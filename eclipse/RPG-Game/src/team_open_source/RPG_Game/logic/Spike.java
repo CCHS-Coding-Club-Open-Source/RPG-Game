@@ -24,5 +24,5 @@ public void activate(){
 public String getImageName(){
 	return "NULL";
 }
- 
+ public void next(){}
 }

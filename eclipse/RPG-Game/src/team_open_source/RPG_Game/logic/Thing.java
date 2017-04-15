@@ -9,10 +9,6 @@ int yPos;
 		this.yPos = yPos;
 	}
 	
-	public void next(){
-		//TODO Add code so this actually does something
-	}
-	
 	public abstract String getImageName();
 
 	public int getxPos() {
@@ -30,6 +26,8 @@ int yPos;
 	public void setyPos(int yPos) {
 		this.yPos = yPos;
 	}
+	
+	public abstract void next();
 	
 		
 	

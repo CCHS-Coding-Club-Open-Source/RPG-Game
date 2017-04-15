@@ -18,6 +18,8 @@ public class Item extends Thing{
 		//TODO add real imageName
 		return "NUll";
 	}
+	
+	public void next(){}
 
 	
 	
