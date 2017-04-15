@@ -16,7 +16,7 @@ int yPos;
 	public abstract String getImageName();
 
 	public int getxPos() {
-		return xPos;
+		return this.xPos;
 	}
 
 	public void setxPos(int xPos) {
@@ -24,7 +24,7 @@ int yPos;
 	}
 
 	public int getyPos() {
-		return yPos;
+		return this.yPos;
 	}
 
 	public void setyPos(int yPos) {
