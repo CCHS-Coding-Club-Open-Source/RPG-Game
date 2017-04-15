@@ -11,13 +11,37 @@ public class RoomGenerator {
 			returns.add(Gobbo);
 			return returns;
 		}
+		case 2: 
+		{
+			Enemy e1 = RoomGenerator.genEnemy();
+			returns.add(e1);
+			return returns;
+		}
 		case 3:
 		{
 			Enemy e1 = RoomGenerator.genEnemy();
 			returns.add(e1);
 			return returns;
 		}
+		case 4: 
+		{
+			Enemy e1 = RoomGenerator.genEnemy();
+			returns.add(e1);
+			return returns;
+		}
 		case 5: 
+		{
+			Enemy e2 = RoomGenerator.genEnemy();
+			returns.add(e2);
+			return returns;
+		}
+		case 6: 
+		{
+			Enemy e2 = RoomGenerator.genEnemy();
+			returns.add(e2);
+			return returns;
+		}
+		case 7: 
 		{
 			Enemy e2 = RoomGenerator.genEnemy();
 			returns.add(e2);
@@ -34,6 +58,12 @@ public class RoomGenerator {
 		{
 			DarkKnight allways = new DarkKnight(3,3); //He always triumphs;
 			returns.add(allways);
+			return returns;
+		}
+		case 10: 
+		{
+			Enemy e3 = RoomGenerator.genEnemy();
+			returns.add(e3);
 			return returns;
 		}
 		case 11:
