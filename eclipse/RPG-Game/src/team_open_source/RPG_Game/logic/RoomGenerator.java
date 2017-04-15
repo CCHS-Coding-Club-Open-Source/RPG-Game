@@ -32,7 +32,7 @@ public class RoomGenerator {
 		
 		case 9: 
 		{
-			BlackKnight allways = new BlackKnight(3,3); //He always triumphs;
+			DarkKnight allways = new DarkKnight(3,3); //He always triumphs;
 			returns.add(allways);
 			return returns;
 		}
