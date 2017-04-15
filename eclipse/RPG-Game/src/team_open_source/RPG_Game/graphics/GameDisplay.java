@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -15,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import team_open_source.RPG_Game.Main;
+import team_open_source.RPG_Game.logic.Board;
 
 /**
  * GameDisplay is responsible for the game's graphics, and triggering the game's logic from controls.
@@ -26,8 +26,11 @@ import team_open_source.RPG_Game.Main;
 public class GameDisplay extends JPanel implements KeyListener  {
 	Timer timer;
 	int QUICKNESS;  //controls speed of movement; smaller number = faster
+	Board board;
 
-	public GameDisplay(OptionPanel optionPanel, int sqDim) {
+	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
+		this.board = board;
+
 		QUICKNESS = 1000;
 		
 		addKeyListener(this); //the panel will listen to the keyboard for key events
@@ -88,7 +91,18 @@ public class GameDisplay extends JPanel implements KeyListener  {
 
 	
 	public void update() {
+		
+		//updateLogic();
+		
+		updateGraphics();
+		
+		
+		
 		System.out.println("tick");
+	}
+	
+	public void updateGraphics() {
+		this.board.get(0);
 	}
 	
 	

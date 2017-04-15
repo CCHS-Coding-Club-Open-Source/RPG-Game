@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 
 import team_open_source.RPG_Game.graphics.GameDisplay;
 import team_open_source.RPG_Game.graphics.OptionPanel;
+import team_open_source.RPG_Game.logic.Board;
 import team_open_source.RPG_Game.logic.Player;
 
 /**
@@ -27,11 +28,14 @@ public class Main {
     public static int dim2;
     public static int sqDim;
     public static OptionPanel optionPanel;
+    public static Board board;
     
 	/**
 	 * @param args The arguments given when running the program.
 	 */
 	public static void main(String[] args) {
+		board = new Board();
+		
 		
 		// Get dimensions for the window
 		dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -56,7 +60,7 @@ public class Main {
         displayFrame.getContentPane().add(optionPanel, BorderLayout.NORTH);
         
 
-        displayPanel = new GameDisplay(optionPanel, sqDim);
+        displayPanel = new GameDisplay(optionPanel, sqDim, board);
         displayPanel.startGame();
         displayFrame.getContentPane().add(displayPanel, BorderLayout.SOUTH);  //add the panel with the keylistener to the frame
         
