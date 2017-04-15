@@ -19,7 +19,8 @@ ArrayList<Thing> tiles;
 		tiles.clear();
 	}
 	
-	public void next(){
+	public void move(){
+		System.out.println("AY");
 		for(Thing thing: tiles){
 			thing.next();
 		}

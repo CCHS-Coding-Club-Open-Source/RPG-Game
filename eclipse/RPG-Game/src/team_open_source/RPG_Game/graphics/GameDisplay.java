@@ -2,7 +2,6 @@ package team_open_source.RPG_Game.graphics;
 
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -33,8 +32,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	Timer timer;
 	int QUICKNESS;  //controls speed of movement; smaller number = faster
 	Board board;
-	Room room;
 	int sqDim;
+	Room room;
 
 	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
 		this.sqDim = sqDim;
@@ -76,11 +75,12 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		
 		picLabel.setBounds(0, 0, size.width, size.height);
 		add(picLabel);
-		
 
+		this.room = board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
+		
+		updateGraphics();
 		timer.start();
 
-		room = this.board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
 	}
 
@@ -117,7 +117,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	}
 	
 	public void updateGraphics() {
-		room.next();
+		System.out.println(this.room);
+		this.room.move();
 		
 		ArrayList<Thing> itemsInRoom = room.getAll();
 		
