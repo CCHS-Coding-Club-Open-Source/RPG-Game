@@ -51,7 +51,6 @@ public class GameDisplay extends JPanel implements KeyListener  {
 				else if(Main.displayFrame.isFocusOwner()) update(); //Works on some computers (in case the above doesn't work)
 		}});
 
-		update();
 	}
 	
 	
@@ -78,9 +77,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 
 		this.room = board.get(1);  //TODO actually get the rooms in a loop or something where we can move to the next one
 		
-		updateGraphics();
+		update();
 		timer.start();
-
 		
 	}
 
@@ -118,15 +116,15 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	
 	public void updateGraphics() {
 		System.out.println(this.room);
-		this.room.move();
+		//this.room.move();
 		
 		ArrayList<Thing> itemsInRoom = room.getAll();
 		
 		for(int i = 0; i < itemsInRoom.size(); i++) {
 			Thing thing = itemsInRoom.get(i);
 
-			int x = thing.getxPos()*100;
-			int y = thing.getyPos()*100;
+			int x = thing.getxPos()*10;
+			int y = thing.getyPos()*10;
 			
 			int xCoord = 0;
 			int yCoord = 0;
