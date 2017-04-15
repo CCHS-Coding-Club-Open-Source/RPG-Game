@@ -8,8 +8,8 @@ public class Spike extends Trap implements Trigger {
  }
  
 public void setPos(){
-	xPos = this.xPos;
-	yPos = this.yPos;
+	//xPos = this.xPos;
+	//yPos = this.yPos;
 }
 
 public void set(){
