@@ -5,4 +5,6 @@ public class Ogre extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(1);
 	}
+	
+	public String getImageName(){ return "ogre.png"; }
 }

@@ -20,5 +20,9 @@ public void activate(){
 	super.triggered = true; 
 	
 }
+
+public String getImageName(){
+	return "NULL";
+}
  
 }

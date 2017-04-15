@@ -5,4 +5,5 @@ public class Golem extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(2);
 	}
+	public String getImageName(){ return "golem.png"; }
 }

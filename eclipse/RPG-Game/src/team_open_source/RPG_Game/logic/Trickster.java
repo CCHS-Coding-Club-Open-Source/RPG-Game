@@ -5,4 +5,6 @@ public class Trickster extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(5);
 	}
+	
+	public String getImageName(){ return "trickster.png"; }
 }

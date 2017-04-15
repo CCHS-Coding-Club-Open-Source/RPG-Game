@@ -21,5 +21,7 @@ public class Enemy extends Being {
 		
 	}
 	
+	public String getImageName(){ return "Enemy?"; }
+	
 	
 }

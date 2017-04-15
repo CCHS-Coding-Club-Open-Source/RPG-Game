@@ -5,4 +5,6 @@ public class EldAbom extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(4);
 	}
+	
+	public String getImageName(){ return "eldritch-abomination.png"; }
 }

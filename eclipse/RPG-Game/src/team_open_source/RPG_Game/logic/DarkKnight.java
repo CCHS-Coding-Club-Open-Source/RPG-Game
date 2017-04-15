@@ -7,5 +7,6 @@ public class DarkKnight extends Enemy {
 		super.addToStat(i);
 		}
 	}
+	public String getImageName(){ return "dark-knight.png"; }
 }
 

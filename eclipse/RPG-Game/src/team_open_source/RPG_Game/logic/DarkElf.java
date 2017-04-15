@@ -5,4 +5,5 @@ public class DarkElf extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(3);
 	}
+	public String getImageName(){ return "dark-elf.png"; }
 }

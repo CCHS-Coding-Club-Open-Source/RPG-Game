@@ -5,4 +5,6 @@ public class Zombie extends Enemy {
 		super(xPos, yPos);
 		super.addToStat(2);
 	}
+	
+	public String getImageName(){ return "zombie.png"; }
 }

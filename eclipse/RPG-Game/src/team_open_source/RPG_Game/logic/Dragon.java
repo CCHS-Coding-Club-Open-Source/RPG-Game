@@ -8,4 +8,5 @@ public class Dragon extends Enemy {
 		super.addToStat(i);
 		}
 	}
+	public String getImageName(){ return "dragon.png"; }
 }
