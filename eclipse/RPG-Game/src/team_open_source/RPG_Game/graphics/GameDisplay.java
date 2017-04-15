@@ -42,7 +42,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		this.sqDim = sqDim;
 		this.board = board;
 
-		QUICKNESS = 1000;
+		QUICKNESS = 100;
 		
 		addKeyListener(this); //the panel will listen to the keyboard for key events
 
@@ -131,16 +131,19 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		for(int i = 0; i < itemsInRoom.size(); i++) {
 			Thing thing = itemsInRoom.get(i);
 
-			int x = thing.getxPos()*10;
-			int y = thing.getyPos()*10;
+			int x = thing.getxPos();
+			int y = thing.getyPos();
 			
-			int xCoord = 0;
-			int yCoord = 0;
+			int xCoord = x*(sqDim/5);
+			int yCoord = y*(sqDim/5);
 			
 			try {
 				System.out.println("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName());
-				JLabel imageLabel = new JLabel(new ImageIcon(ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()))));
-				imageLabel.setBounds(x, y, imageLabel.getPreferredSize().width, imageLabel.getPreferredSize().height);
+				Image img = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()));
+				ImageIcon imgIcon = new ImageIcon(img.getScaledInstance(sqDim/5, sqDim/5, Image.SCALE_DEFAULT));
+				JLabel imageLabel = new JLabel(imgIcon);
+				
+				imageLabel.setBounds(xCoord, yCoord, imageLabel.getPreferredSize().width, imageLabel.getPreferredSize().height);
 				background.add(imageLabel);
 			} catch (IOException e) {
 				e.printStackTrace();
