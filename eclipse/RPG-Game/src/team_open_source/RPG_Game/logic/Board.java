@@ -7,7 +7,8 @@ public class Board {
 	public Board(){
 		RoomGenerator g = new RoomGenerator();
 		for(int i = 0; i < 11; i++){
-			Room r = new Room(g.genRoom(i));
+			ArrayList<Thing> stuff = g.genRoom(i);
+			Room r = new Room(stuff);
 			board.add(r);
 		}
 	}
