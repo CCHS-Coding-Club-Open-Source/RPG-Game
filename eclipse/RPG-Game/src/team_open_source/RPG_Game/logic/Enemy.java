@@ -18,7 +18,8 @@ public class Enemy extends Being {
 	}
 	
 	public void next(){
-		
+	xPos++;
+	yPos++;
 	}
 	
 	public String getImageName(){ return "Enemy?"; }
