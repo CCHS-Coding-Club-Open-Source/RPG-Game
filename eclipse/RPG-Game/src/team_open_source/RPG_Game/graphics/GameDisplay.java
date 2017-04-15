@@ -1,5 +1,8 @@
 package team_open_source.RPG_Game.graphics;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -30,8 +33,10 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	Timer timer;
 	int QUICKNESS;  //controls speed of movement; smaller number = faster
 	Board board;
+	int sqDim;
 
 	public GameDisplay(OptionPanel optionPanel, int sqDim, Board board) {
+		this.sqDim = sqDim;
 		this.board = board;
 
 		QUICKNESS = 1000;
@@ -63,7 +68,12 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+		
+
+		JLabel picLabel = new JLabel(new ImageIcon(myPicture.getScaledInstance(sqDim, sqDim, Image.SCALE_DEFAULT)));
+		Dimension size = picLabel.getPreferredSize();
+		
+		picLabel.setBounds(0, 0, size.width, size.height);
 		add(picLabel);
 		
 
@@ -120,6 +130,8 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			}
 			
 		}
+		
+		repaint();
 		
 		
 	}

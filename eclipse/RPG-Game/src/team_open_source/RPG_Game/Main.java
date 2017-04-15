@@ -2,6 +2,7 @@ package team_open_source.RPG_Game;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -46,8 +47,7 @@ public class Main {
         
 
         displayFrame = new JFrame("RPG Game");
-        displayFrame.setResizable(false);
-        
+        displayFrame.setResizable(false);        
         displayFrame.setLayout(new BorderLayout());
         
         
@@ -61,6 +61,8 @@ public class Main {
         
 
         displayPanel = new GameDisplay(optionPanel, sqDim, board);
+        displayPanel.setLayout(null);  // No layout manager because we want to set positions ourself
+        displayPanel.setPreferredSize(new Dimension(sqDim, sqDim));
         displayPanel.startGame();
         displayFrame.getContentPane().add(displayPanel, BorderLayout.SOUTH);  //add the panel with the keylistener to the frame
         
