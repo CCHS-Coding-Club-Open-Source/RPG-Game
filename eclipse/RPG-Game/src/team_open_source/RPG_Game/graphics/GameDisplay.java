@@ -27,11 +27,11 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	Timer timer;
 	int QUICKNESS;  //controls speed of movement; smaller number = faster
 
-	
-	
-	
 	public GameDisplay(OptionPanel optionPanel, int sqDim) {
-		QUICKNESS = 10;
+		QUICKNESS = 1000;
+		
+		addKeyListener(this); //the panel will listen to the keyboard for key events
+
 		
 		timer = new Timer(QUICKNESS, new ActionListener(){   
 			public void actionPerformed(ActionEvent e) {
@@ -41,6 +41,12 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		}});
 
 		update();
+	}
+	
+	
+	public void addNotify() { //called internally - makes the component displayable
+		super.addNotify();
+		requestFocus();
 	}
 
 	public void startGame() {
@@ -54,30 +60,35 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
 		add(picLabel);
 		
+
+		timer.start();
 		
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		System.out.println(e);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		System.out.println(e);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		System.out.println(e);
 		// TODO Auto-generated method stub
 		
 	}
 
 	
 	public void update() {
-		
+		System.out.println("tick");
 	}
 	
 	
