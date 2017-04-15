@@ -1,15 +1,20 @@
 package team_open_source.RPG_Game.graphics;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import team_open_source.RPG_Game.Main;
 
 /**
  * GameDisplay is responsible for the game's graphics, and triggering the game's logic from controls.
@@ -19,9 +24,27 @@ import javax.swing.JPanel;
  */
 @SuppressWarnings("serial")
 public class GameDisplay extends JPanel implements KeyListener  {
+	Timer timer;
+	int QUICKNESS;  //controls speed of movement; smaller number = faster
+
+	
+	
 	
 	public GameDisplay(OptionPanel optionPanel, int sqDim) {
-		// TODO Auto-generated constructor stub
+		QUICKNESS = 10;
+		
+		timer = new Timer(QUICKNESS, new ActionListener(){   
+			public void actionPerformed(ActionEvent e)
+			{
+				//If the window is selected/focused, update()
+				if(isFocusOwner()) update(); //Works most of the time
+				else if(Main.displayFrame.isFocusOwner()) update(); //Works on some computers (in case the above doesn't work)
+
+			}
+		}
+				);
+
+		update();
 	}
 
 	public void startGame() {
@@ -34,6 +57,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		}
 		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
 		add(picLabel);
+		
 		
 	}
 
@@ -55,4 +79,10 @@ public class GameDisplay extends JPanel implements KeyListener  {
 		
 	}
 
+	
+	public void update() {
+		
+	}
+	
+	
 }
