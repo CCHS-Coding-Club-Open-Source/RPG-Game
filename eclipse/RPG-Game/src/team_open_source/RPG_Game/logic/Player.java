@@ -1,5 +1,5 @@
 package team_open_source.RPG_Game.logic;
-import java.util.ArrayList;
+
 public class Player extends Being{
 int gold; 
 
