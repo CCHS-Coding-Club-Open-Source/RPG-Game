@@ -67,7 +67,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 	public void startGame() {
 		BufferedImage backgroundPicture = null;
 		try {
-			backgroundPicture = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/backgrounds/room.png"));
+			backgroundPicture = ImageIO.read(getClass().getClassLoader().getResource("cchs_open_source/RPG_Game/resources/images/backgrounds/room.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -144,7 +144,7 @@ public class GameDisplay extends JPanel implements KeyListener  {
 			int yCoord = y*(sqDim/5);
 			
 			try {
-				Image img = ImageIO.read(getClass().getClassLoader().getResource("team_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()));
+				Image img = ImageIO.read(getClass().getClassLoader().getResource("cchs_open_source/RPG_Game/resources/images/thing/" + thing.getImageName()));
 				ImageIcon imgIcon = new ImageIcon(img.getScaledInstance(sqDim/5, sqDim/5, Image.SCALE_DEFAULT));
 				JLabel imageLabel = new JLabel(imgIcon);
 				
